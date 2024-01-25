@@ -1,0 +1,113 @@
+.navbar {
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 44px 0;
+    }
+
+    #navbar__check {
+        display: none;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 33px;
+        list-style: none;
+
+        &-item a {
+            text-decoration: none;
+            color: #83888F;
+            font-family: 'Barlow', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 15px;
+            letter-spacing: 0.923px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                color: #333D4B;
+            }
+        }
+    }
+
+    &__label {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .navbar {
+
+        &__wrapper {
+            position: relative;
+        }
+
+        #navbar__check {
+            position: absolute;
+            display: block;
+            visibility: hidden;
+        }
+
+        &__logo {
+            z-index: 1001;
+
+            & img {
+                width: 162px;
+                height: 17px;
+            }
+        }
+
+        &__list {
+            position: absolute;
+            top: 0;
+            left: 0;
+            flex-direction: column;
+            background: linear-gradient(0deg, rgba(254, 252, 247, 0.50) 0%, #fff 55.94%);
+            width: 100%;
+            height: 0vh;
+            padding-top: 130px;
+            z-index: 1000;
+            overflow: hidden;
+            display: none;
+        }
+
+        &__label {
+            display: block;
+            z-index: 1001;
+        }
+
+        #navbar__check:checked+&__list {
+            display: flex;
+            animation: anim_nav 0.5s ease-in forwards;
+        }
+
+        #navbar__check:not(:checked)+&__list {
+            display: flex;
+            height: 100vh;
+            animation: anim_nav_cls 0.5s ease-in forwards;
+        }
+
+        @keyframes anim_nav {
+            0% {
+                height: 0vh;
+            }
+
+            100% {
+                height: 100vh;
+            }
+        }
+
+        @keyframes anim_nav_cls {
+            0% {
+                height: 100vh;
+            }
+
+            100% {
+                height: 0vh;
+                display: none;
+            }
+        }
+    }
+}

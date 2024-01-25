@@ -1,0 +1,122 @@
+.work {
+    margin: 160px 0 168px;
+
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #2C343E;
+        padding: 100px 85px;
+        border-radius: 10px;
+    }
+
+    &__list {
+        display: flex;
+        list-style: none;
+
+        &-item {
+            padding: 82px 95px 0 0;
+            position: relative;
+
+            &:not(:last-child) {
+                border-top: 2px solid $paleOrange;
+            }
+
+            &::after {
+                @include list__item-after();
+            }
+
+            & span {
+                @include heading($paleOrange, 72px, 72px);
+            }
+
+            & h2 {
+                @include heading($lightCream, 32px, 36px) {
+                    width: 255px;
+                    margin: 38px 0 42px;
+                }
+            }
+
+            & p {
+                @include paragraf($lightCream) {
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+}
+
+@include tablet() {
+    .work {
+        margin: 125px 0 144px;
+        background: #2C343E;
+        
+        &__wrapper {
+            padding: 97px 40px;
+        }
+
+        &__list {
+
+            &-item {
+                padding: 62px 5px 0 0;
+
+                & h2 {
+                    @include heading($lightCream, 28px, 32px) {
+                        width: 223px;
+                    }
+                }
+
+                & p {
+                    @include paragraf($lightCream, 15px, 25px);
+                }
+            }
+        }
+    }
+}
+
+@include phone() {
+    .work {
+        margin: 100px 0 120px;
+        
+        &__wrapper {
+            padding: 80px 24px;
+        }
+
+        &__list {
+            flex-direction: column;
+            gap: 56px;
+
+            &-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0;
+
+                &:not(:last-child) {
+                    border-top: none;
+                }
+
+                &::after {
+                    @include list__item-after() {
+                        display: none;
+                    }
+                }
+
+                & h2 {
+                    @include heading($lightCream, 28px, 32px) {
+                        width: 100%;
+                        margin: 24px 0;
+                        text-align: center;
+                    }
+                }
+
+                & p {
+                    @include paragraf($lightCream, 15px, 25px) {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

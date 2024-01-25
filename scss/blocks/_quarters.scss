@@ -1,0 +1,120 @@
+.quarters {
+    margin: 168px 0;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    & .wr {
+        display: flex;
+        flex-direction: column;
+        gap: 72px;
+    }
+
+    &__title {
+        color: #83888F;
+        font-size: 24px;
+        font-weight: 900;
+        line-height: 32px;
+    }
+
+    &__list {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 95px;
+
+        &-item {
+            max-width: 285px;
+            display: flex;
+            flex-direction: column;
+            gap: 46px;
+
+            & img {
+                width: 50px;
+                height: 50px;
+            }
+
+            & div {
+                display: flex;
+                flex-direction: column;
+
+                & h3 {
+                    color: #333D4B;
+                    font-size: 32px;
+                    font-weight: 900;
+                    line-height: 36px;
+                    white-space: nowrap;
+                }
+
+                & span {
+                    color: #333D4B;
+                    font-family: 'Barlow', sans-serif;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 26px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .quarters {
+        margin: 144px 0;
+
+        & .wr {
+            width: 100%;
+        }
+
+        &__list {
+            justify-content: space-between;
+            gap: 10px;
+
+            &-item {
+                max-width: 222px;
+
+
+                & div {
+    
+                    & h3 {
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 767px){
+    .quarters {
+        margin: 120px 0;
+
+        & .wr {
+            width: 100%;
+            align-items: center;
+        }
+
+        &__list {
+            flex-direction: column;
+            gap: 80px;
+
+            &-item {
+                max-width: none;
+                width: 100%;
+                align-items: center;
+                text-align: center;
+
+
+                & div {
+    
+                    & h3 {
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
